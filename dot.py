@@ -28,7 +28,7 @@ def graph_to_dot(graph, title):
                 name = n.p.name
                 dot.node("n"+str(hash(n)), name)
             else:
-                dot.node("n"+str(hash(n)), str(counter))
+                dot.node("n"+str(hash(n)), str(counter + 1))
             legend[counter] = n.p
             done += [hash(n)]
             counter += 1
