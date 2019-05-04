@@ -1,0 +1,12 @@
+agent Sem = p.v.Sem;
+
+agent Tx1' = request1.'p.'begin1.'end1.'v.Tx1';
+agent Rx1' = begin2.end2.'indication2.Rx1';
+
+agent Tx2' = Tx1'[request2/request1,
+			  begin2/begin1, end2/end1];
+agent Rx2' = Rx1'[begin2/begin1, end2/end1,
+			  begin1/begin2, end1/end2,
+			  indication1/indication2];
+
+agent HalfDuplex = (Tx1' | Rx1' | Tx2' | Rx2' | Sem) \ { p, v, begin1, end1, begin2, end2 };

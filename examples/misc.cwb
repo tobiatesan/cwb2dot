@@ -1,0 +1,11 @@
+agent BAR = pong.BAR;
+agent MEH = 'ping.(BAR[ping/
+		       pong]);
+agent BAH = 'ping.BAR[ping/pong];
+agent NICE = ping.ping.pong.BAR;
+agent YUK = BAR \ {pong};
+agent LOL = pong.LOL | foo.LOL;
+agent ARGH = foo.ARGH;
+agent EEK = 'foo.EEK;
+agent PIPE = EEK | ARGH;
+agent OOOOH = PIPE \ {foo};
