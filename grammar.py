@@ -40,7 +40,7 @@ cwbgrammar = """?start: (stuff)+
        | "testpre" | "toggle" | "transitions" | "twothirdseq" | "twothirdspre"
        | "vs"
 
-?process: relablable "\\\\ {" labels "}" -> res
+?process: relablable "\\\\" "{" labels "}" -> res
         | relablable "[" substs "]" -> rel
         | dprocess
 
@@ -74,7 +74,7 @@ cwbgrammar = """?start: (stuff)+
 ?iaction: label -> iaction
 ?oaction: "'" label -> oaction
 
-COMMENT                 :   "*" /(.)+/ NEWLINE
+COMMENT                 :   "*" /(.)*/ NEWLINE
 MOSTSTUFF               :   ("," | "(" | ")" | "=" | /\w/ | " " | /[0-9]/)+
 PROCNAME                :   (/[A-Z]/ | /[a-z]/ | /[0-9]/)+"'"*
 
